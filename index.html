@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">   
+    <title>Document</title>
+</head>
+<body style="background-color:#2d3032;">
+
+    <main>
+        <header>
+            <div class="title">
+                <img src="icons\chat.png" width="50px">     
+                <h1>WEB CHAT..</h1>
+            </div>
+            <button type="button" onclick="show_hide()">
+                <img src="icons\message.png" width="50px">
+        
+            </button>
+        </header>
+    
+    <div class="container">
+        <div class="user-window">
+            <div class="user-head">
+                <h3>People</h3>
+                <h4 class="users-count">3</h4>
+            </div>
+            <div class="user-list">
+            </div>
+
+            <div class="qrcode">
+                <h1 id="join">Join the Chat</h1>
+
+                <div class="image-container">
+                    <img src="icons\qrcode.png" alt="QR Code" class="qrimage" onclick="openFullscreen(this)">
+                </div>
+
+
+                <div id="fullscreen" class="fullscreen" onclick="closeFullscreen()">
+                    <span class="closebtn">&times;</span>
+                    <img id="fullscreen-img" src="icons\qrcode.png" alt="Fullscreen Image">
+                </div>
+
+                
+              
+                
+            </div>
+
+
+
+        
+            
+            
+
+        </div>
+        
+        <div class="chat-window">
+            <div class="chats">
+
+            </div>
+            <div class="user-input">
+                <input id="user-msg" type="text" placeholder="Say Something..." >
+                <button type="button" id="user-send">SEND</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    var uwindow=document.querySelector('.user-window');
+    function show_hide()
+    {
+        if(uwindow.style.display=="none")
+    {
+       uwindow.style.display="block"; 
+    }
+    else{
+        uwindow.style.display="none";
+    }
+    }
+</script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/client.js"></script>
+</body>
+</html>  
